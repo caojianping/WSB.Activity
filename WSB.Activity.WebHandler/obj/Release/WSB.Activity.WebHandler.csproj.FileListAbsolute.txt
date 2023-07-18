@@ -1,0 +1,11 @@
+D:\2017\WSB.Activity\WSB.Activity.WebHandler\bin\Release\WSB.Activity.WebHandler.dll
+D:\2017\WSB.Activity\WSB.Activity.WebHandler\bin\Release\WSB.Activity.WebHandler.pdb
+D:\2017\WSB.Activity\WSB.Activity.WebHandler\bin\Release\Newtonsoft.Json.dll
+D:\2017\WSB.Activity\WSB.Activity.WebHandler\bin\Release\Newtonsoft.Json.xml
+D:\2017\WSB.Activity\WSB.Activity.WebHandler\obj\Release\WSB.Activity.WebHandler.dll
+D:\2017\WSB.Activity\WSB.Activity.WebHandler\obj\Release\WSB.Activity.WebHandler.pdb
+D:\2017\WSB.Activity\WSB.Activity.WebHandler\bin\Release\WSB.Activity.Common.dll
+D:\2017\WSB.Activity\WSB.Activity.WebHandler\bin\Release\log4net.dll
+D:\2017\WSB.Activity\WSB.Activity.WebHandler\bin\Release\WSB.Activity.Common.pdb
+D:\2017\WSB.Activity\WSB.Activity.WebHandler\bin\Release\log4net.xml
+D:\2017\WSB.Activity\WSB.Activity.WebHandler\obj\Release\WSB.Activity.WebHandler.csprojResolveAssemblyReference.cache

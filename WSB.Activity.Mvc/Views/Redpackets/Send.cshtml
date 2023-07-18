@@ -1,0 +1,137 @@
+﻿@model WSB.Activity.Mvc.Models.RedpacketsSendViewModel
+@{
+    ViewBag.Title = "发红包";
+    string prompt = string.Empty;
+    int btnType = 0;
+    string btnClass = string.Empty;
+    string btnText = string.Empty;
+    if (Model.OldRedpackets != null)
+    {
+        prompt = "您还有未被领取完的红包！";
+        btnClass = "send redpackets-continue";
+        btnText = "继续分享";
+    }
+    else
+    {
+        if (Model.ChanceCount <= 0)
+        {
+            prompt = "发红包机会次数用完了哦，快去做任务获取更多吧！";
+            btnClass = "send redpackets-none";
+            btnText = "发红包";
+        }
+        else
+        {
+            btnType = 1;
+            btnClass = "send";
+            btnText = "发红包";
+        }
+    }
+}
+
+@section styles{
+    <link href="~/Content/send.css" rel="stylesheet" />
+}
+
+<p class="banner">
+    您还有<mark class="banner-count">@(Model.ChanceCount <= 0 ? 0 : Model.ChanceCount)</mark>次机会
+    <a class="banner-more" href="~/Redpackets/Task">获取更多<span>＞</span></a>
+</p>
+<p class="prompt">@prompt</p>
+<div class="people"></div>
+@if (btnType == 0)
+{
+    <button class="@btnClass">@btnText</button>
+}
+else
+{
+    SUSER suser = (SUSER)Session["SUSER"];
+    int userId = suser != null ? suser.UserId : 0;
+    using (Html.BeginForm("Send", "Redpackets", FormMethod.Post, new { @id = "sendForm" }))
+    {
+        @Html.Hidden("userId", userId)
+        <button class="@btnClass">@btnText</button>
+    }
+}
+
+@if (Model.NewRedpackets != null)
+{
+    <section class="mask">
+        <section class="result">
+            <p class="result-total">@(Model.NewRedpackets.Total)天</p>
+            <p class="result-praise">手气不错哦！</p>
+            <p class="result-prompt">赶快发给好友来瓜分吧！</p>
+            <a class="result-divide">立即瓜分</a>
+        </section>
+    </section>
+}
+
+<section class="share">
+    <section class="share-content">
+        <span class="share-prompt">点击这里分享</span>
+        <i class="share-arrow"></i>
+    </section>
+</section>
+
+<section class="calert">
+    <div class="calert-dialog">
+        <div class="calert-content">
+            <section class="calert-body">
+                <p class="calert-msg">已经发过红包啦！</p>
+            </section>
+            <footer class="calert-footer">
+                <button class="calert-close"></button>
+            </footer>
+        </div>
+    </div>
+</section>
+
+@section scripts{
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script src="~/Scripts/jwx.js"></script>
+    <script>
+        function init(msg) {
+            if (msg) {
+                new Alert().open({
+                    msg: msg,
+                    close: "知道了"
+                });
+            }
+        }
+
+        function mask() {
+            $(".mask").on("click", function (event) {
+                $(".mask").hide();
+            });
+        }
+
+        function prompt() {
+            $(".result-divide,.redpackets-continue").on("click", function (event) {
+                event.stopPropagation();
+                $(".share.share-nonebg").removeClass("share-nonebg");
+                if ($(this).hasClass("result-divide")) {
+                    $(".share").addClass("share-nonebg");
+                    $(".share").fadeIn().delay(2000).fadeOut();
+                } else {
+                    $(".share").fadeIn().delay(2000).fadeOut();
+                }
+            });
+            $(".redpackets-none").on("click", function (event) {
+                event.stopPropagation();
+                alert("今天的发红包次数用完了哦，快去做任务获取更多吧！");
+            });
+        }
+
+        $(function () {
+            init('@Html.Raw(ViewBag.Msg)');
+
+            var id = '@(Model.OldRedpackets != null ? Model.OldRedpackets.Id: 0)';
+            if (parseInt(id) > 0) {
+                var url = '@Url.Content("~/User/GetJsConfigData")',
+                link = window.location.origin + '@Url.Content("~/Redpackets/Detail/")' + id;
+                new WeChat().init(url, link);
+            }
+            mask();
+            prompt();
+        });
+    </script>
+}

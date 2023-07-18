@@ -1,0 +1,70 @@
+﻿@model WSB.Activity.Mvc.Models.RankViewModel
+@{
+    ViewBag.Title = "英雄榜";
+    string nickname = string.Empty;
+    string avatar = string.Empty;
+    if (Model.User != null)
+    {
+        nickname = Model.User.Nickname;
+        avatar = Model.User.Avatar;
+    }
+}
+
+@section styles{
+    <link href="~/Content/rank.css" rel="stylesheet" />
+}
+
+<header class="header clearfix">
+    <a class="header-side header-back" href="javascript:window.history.back(-1)"></a>
+    <h1 class="header-title">英雄榜</h1>
+</header>
+
+<section class="rank-info">
+    <figure>
+        <img src="@avatar" alt="@nickname" />
+    </figure>
+    <p>
+        <i></i>
+        <mark>第@(Model.RankNumber)名</mark>
+    </p>
+</section>
+
+<section class="rank-section">
+    <table class="rank-table">
+        <thead>
+            <tr>
+                <th>排名</th>
+                <th>好友</th>
+                <th>天数</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                int index = 0;
+                foreach (var item in Model.PageResult.DataList)
+                {
+                    index++;
+                    <tr>
+                        @if (index <= 3)
+                        {
+                            <td><i class="top top@(index)"></i></td>
+                        }
+                        else
+                        {
+                            <td>@index</td>
+                        }
+                        <td>@item.Nickname</td>
+                        <td>@(item.RedpacketsTotalNumber)天</td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</section>
+
+<a class="sendbar" href="~/Redpackets/Send"></a>
+
+<footer class="copyright">
+    <p class="logo-hfyx"></p>
+    <p class="logo-jk"><span>经看提供技术支持</span></p>
+</footer>

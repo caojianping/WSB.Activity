@@ -1,0 +1,576 @@
+﻿/*细线样式*/
+.overline,
+.underline {
+    position: relative;
+}
+
+    .overline:before,
+    .underline:after {
+        position: absolute;
+        right: 0;
+        left: 0;
+        z-index: 1;
+        display: block;
+        content: "";
+        border: none;
+        border-top: 1px solid #e2e2e6;
+        -webkit-transform: scaleY(.5);
+        -moz-transform: scaleY(.5);
+        -ms-transform: scaleY(.5);
+        -o-transform: scaleY(.5);
+        transform: scaleY(.5);
+        transform-origin: 0 0;
+    }
+
+    .overline:before {
+        top: 0;
+    }
+
+    .underline:after {
+        bottom: 0;
+    }
+
+    .underline.underline-left-60px:after {
+        left: 60px;
+    }
+
+/*暂无数据样式*/
+.nodata {
+    padding: 15px 0;
+    font-size: 16px;
+    color: #f0ad4e;
+    text-align: center;
+}
+
+/*顶部样式*/
+.header {
+    display: block;
+    background-color: rgb(56,175,249);
+}
+
+    .header .header-side,
+    .header .header-title {
+        height: 45px;
+        line-height: 45px;
+    }
+
+    .header .header-side {
+        display: inline-block;
+        font-size: 14px;
+        color: white;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    .header .header-title {
+        margin: 0 45px;
+        font-size: 16px;
+        color: white;
+        letter-spacing: 2px;
+    }
+
+    .header .header-back,
+    .header .header-home,
+    .header .header-help {
+        width: 45px;
+    }
+
+    .header .header-back {
+        position: relative;
+        float: left;
+    }
+
+        .header .header-back:after {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            display: block;
+            width: 12px;
+            height: 12px;
+            content: "";
+            border-bottom: 2px solid white;
+            border-left: 2px solid white;
+            -webkit-transform: rotate(45deg);
+            -moz-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+
+    .header .header-home,
+    .header .header-help {
+        text-decoration: none;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+
+    .header .header-home {
+        background-image: url("../Images/home.png");
+        background-size: 23.65px 22px;
+    }
+
+    .header .header-help {
+        background-image: url("../Images/help.png");
+        background-size: 22px 22px;
+    }
+
+/*图片标题样式*/
+.title {
+    padding: 15px 0;
+}
+
+    .title p {
+        margin-bottom: 15px;
+    }
+
+        .title p:last-child {
+            margin-bottom: 0;
+        }
+
+    /*超酷有线*/
+    .title .title-ckyx {
+        height: 28.5px;
+        background: url("../Images/title_ckyx.png") no-repeat center center;
+        background-size: 151.5px 28.5px;
+    }
+
+    /*红包作坊*/
+    .title .title-hbzf {
+        height: 46.5px;
+        background: url("../Images/task/title_hbzf.png") no-repeat center center;
+        background-size: 270px 46.5px;
+    }
+
+    /*超级福利*/
+    .title .title-cjfl {
+        height: 20.5px;
+        background: url("../Images/task/title_cjfl.png") no-repeat center center;
+        background-size: 266px 20.5px;
+    }
+
+    /*手机玩转电视*/
+    .title .title-shwzds {
+        height: 44px;
+        background: url("../Images/lotto/title_sjwzds.png") no-repeat center center;
+        background-size: 278.5px 50.5px;
+    }
+
+/*横幅样式*/
+.banner {
+    width: 100%;
+    height: 40px;
+    font-size: 16px;
+    line-height: 40px;
+    color: white;
+    text-align: center;
+    background-color: rgb(25, 140, 250);
+    border-radius: 22.5px;
+}
+
+    .banner.banner-lotto {
+        margin: auto;
+        width: 80%;
+        background-color: rgb(15,112,202);
+    }
+
+    .banner .banner-count {
+        margin: 0 2px;
+        font-size: 18px;
+        font-weight: bold;
+        color: rgb(255, 243, 89);
+    }
+
+    .banner .banner-more {
+        position: relative;
+        top: -1px;
+        display: inline-block;
+        padding: 0 8px;
+        height: 20px;
+        font-size: 12px;
+        line-height: 20px;
+        text-align: center;
+        color: rgb(236, 90, 54);
+        text-decoration: none;
+        background-color: rgb(255, 243, 89);
+        border-radius: 10px;
+    }
+
+    .banner.banner-lotto .banner-more {
+        color: rgb(245,24,28);
+        background-color: rgb(255,246,147);
+    }
+
+    .banner .banner-more span {
+        margin-left: 2px;
+    }
+
+/*红包样式*/
+.whole {
+    position: absolute;
+    top: 100px;
+    right: 0;
+    left: 0;
+    margin-bottom: 55px;
+}
+
+.bag {
+    margin: auto;
+    margin-bottom: 15px;
+    width: 235px;
+    height: 215px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+    .bag.bag-close {
+        background-image: url("../Images/bag_close.png");
+    }
+
+    .bag.bag-open {
+        background-image: url("../Images/bag_open.png");
+    }
+
+.cbutton {
+    display: block;
+    margin: auto;
+    width: 50%;
+    height: 60px;
+    font-size: 22px;
+    line-height: 60px;
+    color: rgb(160, 0, 4);
+    letter-spacing: 5px;
+    text-align: center;
+    text-decoration: none;
+    background: url("../Images/cbutton.png") no-repeat center center;
+    background-size: 100% 100%;
+    border: none;
+    outline: none;
+}
+
+.rsection {
+    display: block;
+    margin: 15px;
+    padding: 10px 0;
+    min-height: 150px;
+    background-color: rgb(255, 230, 189);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.rtable {
+    margin: auto;
+    width: 95%;
+}
+
+    .rtable caption {
+        margin-bottom: 5px;
+        height: 22px;
+        font-size: 0;
+    }
+
+        .rtable caption span,
+        .rtable caption i {
+            display: inline-block;
+            line-height: 22px;
+            vertical-align: middle;
+        }
+
+        .rtable caption span {
+            padding: 0 2px;
+            height: 22px;
+            font-size: 14px;
+            color: #2f2f2f;
+            text-align: center;
+        }
+
+        .rtable caption i:first-child,
+        .rtable caption i:last-child {
+            width: auto;
+            height: 2.5px;
+            background-repeat: no-repeat;
+            background-size: 100% 2.5px;
+        }
+
+        .rtable caption i:first-child {
+            background-image: url("../Images/line_left.png");
+            background-position: right center;
+        }
+
+        .rtable caption i:last-child {
+            background-image: url("../Images/line_right.png");
+            background-position: left center;
+        }
+
+    .rtable tbody tr td {
+        padding: 8px 0;
+        font-size: 12px;
+        text-align: center;
+    }
+
+        .rtable tbody tr td:nth-child(2) {
+            color: #333;
+        }
+
+        .rtable tbody tr td:nth-child(3) {
+            color: #777;
+        }
+
+        .rtable tbody tr td:last-child {
+            color: #ee3c3c;
+        }
+
+        .rtable tbody tr td img {
+            width: 22px;
+            height: 22px;
+            border-radius: 100%;
+            vertical-align: middle;
+        }
+
+/*发红包横幅样式*/
+.sendbar {
+    display: block;
+    width: 100%;
+    height: 120px;
+    background: url("../Images/index/send.png") no-repeat center center;
+    background-size: 100% 100%;
+    border-top: 10px solid rgb(242,242,242);
+    border-bottom: 10px solid rgb(242,242,242);
+}
+
+/*copyright样式*/
+.copyright {
+    padding: 15px 0;
+    background-color: white;
+}
+
+    .copyright .logo-hfyx {
+        height: 15px;
+        background: url("../Images/index/logo_hfyx.png") no-repeat center center;
+        background-size: 52px 15px;
+    }
+
+    .copyright .logo-jk {
+        padding-top: 2px;
+        text-align: center;
+    }
+
+        .copyright .logo-jk span {
+            display: inline-block;
+            padding-left: 20px;
+            height: 14px;
+            font-size: 12px;
+            line-height: 14px;
+            color: rgb(162,162,162);
+            background: url("../Images/index/logo_jk.png") no-repeat left center;
+            background-size: 17px 12px;
+        }
+
+/*红包页脚样式*/
+.footer {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: block;
+    background-color: black;
+    opacity: .7;
+}
+
+    .footer p {
+        margin: 0;
+        height: 40px;
+        font-size: 16px;
+        line-height: 40px;
+        color: white;
+        text-align: center;
+    }
+
+    .footer a {
+        margin: 0 2px;
+        color: rgb(5, 135, 246);
+    }
+
+/*活动介绍样式*/
+.introduce {
+    position: fixed;
+    top: 186px;
+    right: 0;
+    z-index: 9999;
+    display: block;
+    width: 35px;
+    height: 105px;
+    background-image: url("../Images/introduce.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.introduce-title {
+    padding: 15px 15px 10px;
+    font-size: 18px;
+    font-weight: normal;
+    text-align: center;
+}
+
+.introduce-list {
+    margin: 0;
+    padding: 0 15px 15px;
+}
+
+    .introduce-list dt,
+    .introduce-list dd {
+        font-weight: normal;
+        line-height: 1.6;
+    }
+
+    .introduce-list dt {
+        font-size: 16px;
+    }
+
+    .introduce-list dd {
+        font-size: 14px;
+        text-indent: 15px;
+    }
+
+.introduce-modal {
+    z-index: 10000;
+}
+
+    .introduce-modal .modal-header,
+    .introduce-modal .modal-body {
+        background-color: rgb(255, 248, 230);
+    }
+
+    .introduce-modal .modal-header {
+        padding: 15px 15px 10px;
+        border-bottom: none;
+    }
+
+        .introduce-modal .modal-header .modal-title {
+            font-size: 18px;
+        }
+
+    .introduce-modal .modal-body {
+        padding: 0;
+    }
+
+/*自定义弹窗样式*/
+.mask,
+.calert {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 9999;
+    display: block;
+    margin: 0;
+    padding: 0;
+    background-color: rgba(0,0,0,.6);
+}
+
+.calert {
+    display: none;
+}
+
+    .calert .calert-dialog {
+        margin: 100px auto;
+        width: 80%;
+    }
+
+        .calert .calert-dialog .calert-content {
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 0 4px rgb(201,201,201);
+        }
+
+            .calert .calert-dialog .calert-content .calert-header {
+            }
+
+            .calert .calert-dialog .calert-content .calert-body {
+                padding: 50px 25px 25px;
+            }
+
+                .calert .calert-dialog .calert-content .calert-body .calert-msg,
+                .calert .calert-dialog .calert-content .calert-body .calert-help {
+                    margin: 0;
+                    font-size: 16px;
+                    line-height: 1.8;
+                    /*color: rgb(143,69,16);*/
+                    color: rgb(127,127,127);
+                    text-align: center;
+                    letter-spacing: 1px;
+                }
+
+            .calert .calert-dialog .calert-content .calert-footer {
+                margin: 0 15px;
+                padding: 15px 0;
+                font-size: 0;
+                text-align: center;
+            }
+
+                .calert .calert-dialog .calert-content .calert-footer .calert-action,
+                .calert .calert-dialog .calert-content .calert-footer .calert-close {
+                    display: inline-block;
+                    margin: 0;
+                    padding: 0;
+                    width: 47.5%;
+                    height: 36px;
+                    font-size: 16px;
+                    line-height: 36px;
+                    font-weight: normal;
+                    text-align: center;
+                    color: white;
+                    background-color: rgb(253,97,46);
+                    border-radius: 3px;
+                    border: none;
+                    outline: none;
+                }
+
+                .calert .calert-dialog .calert-content .calert-footer .calert-action {
+                    margin-right: 5%;
+                    text-decoration: none;
+                }
+
+/*右上角分享样式*/
+.share {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10000;
+    display: none;
+    background-color: rgba(0,0,0,.6);
+}
+
+    .share.share-nonebg {
+        background-color: transparent;
+    }
+
+    .share .share-content {
+        position: absolute;
+        top: 15px;
+        right: 0;
+        z-index: 10000;
+        text-align: right;
+    }
+
+        .share .share-content .share-prompt {
+            display: inline-block;
+            margin-right: 2px;
+            height: 69px;
+            font-size: 20px;
+            line-height: 90px;
+            color: white;
+            vertical-align: middle;
+        }
+
+        .share .share-content .share-arrow {
+            display: inline-block;
+            margin-right: 25px;
+            width: 54.5px;
+            height: 69px;
+            background: url("../Images/send/arrow.png") no-repeat center center;
+            background-size: 54.5px 69px;
+            vertical-align: middle;
+        }

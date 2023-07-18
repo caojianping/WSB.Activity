@@ -1,0 +1,19 @@
+﻿<configuration>
+  <configSections>
+    <section name="unity" type="Microsoft.Practices.Unity.Configuration.UnityConfigurationSection, Microsoft.Practices.Unity.Configuration"/>
+  </configSections>
+  <unity>
+    <sectionExtension type="Microsoft.Practices.Unity.InterceptionExtension.Configuration.InterceptionConfigurationExtension, Microsoft.Practices.Unity.Interception.Configuration"/>
+    <containers>
+      <container name="activityContainer">
+        <register type="System.Data.Entity.DbContext, EntityFramework" mapTo="WSB.Activity.EFModel.ActivityContext, WSB.Activity.EFModel"/>
+        <register type="WSB.Activity.Interface.IBaseService, WSB.Activity.Interface" mapTo="WSB.Activity.Service.BaseService, WSB.Activity.Service"/>
+        <register type="WSB.Activity.Interface.IUserService, WSB.Activity.Interface" mapTo="WSB.Activity.Service.UserService, WSB.Activity.Service"/>
+        <register type="WSB.Activity.Interface.IRedpacketsService, WSB.Activity.Interface" mapTo="WSB.Activity.Service.RedpacketsService, WSB.Activity.Service"/>
+        <register type="WSB.Activity.Interface.IUserRedpacketsMapService, WSB.Activity.Interface" mapTo="WSB.Activity.Service.UserRedpacketsMapService, WSB.Activity.Service"/>
+        <register type="WSB.Activity.Interface.IUserLottoMapService, WSB.Activity.Interface" mapTo="WSB.Activity.Service.UserLottoMapService, WSB.Activity.Service"/>
+        <register type="WSB.Activity.Interface.IChanceService, WSB.Activity.Interface" mapTo="WSB.Activity.Service.ChanceService, WSB.Activity.Service"/>
+      </container>
+    </containers>
+  </unity>
+</configuration>

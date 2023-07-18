@@ -1,0 +1,288 @@
+﻿.user {
+    position: relative;
+    display: block;
+    width: 100%;
+    background: url("../Images/index/bg_head.png") repeat-x center center;
+    background-size: 100% 100%;
+}
+
+    .user,
+    .user .user-name {
+        height: 90px;
+    }
+
+        .user .user-avatar {
+            margin-left: 30px;
+            width: 46px;
+            height: 46px;
+            border-radius: 100%;
+            vertical-align: middle;
+        }
+
+        .user .user-name {
+            margin-left: 15px;
+            font-size: 18px;
+            line-height: 105px;
+            color: white;
+        }
+
+        .user .user-detail {
+            position: absolute;
+            top: 42px;
+            right: 15px;
+            display: inline-block;
+            width: 21px;
+            height: 21px;
+            text-decoration: none;
+            background: url("../Images/front.png") no-repeat center center;
+            background-size: 10px auto;
+        }
+
+section {
+    display: block;
+}
+
+    section table {
+        width: 100%;
+    }
+
+        section table tr td {
+            padding: 15px 0;
+            width: 33.33%;
+            text-align: center;
+            border-right: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+        }
+
+            section table tr td:last-child {
+                border-right: none;
+            }
+
+        section table tr:first-child td:first-child,
+        section table tr:last-child td {
+            border-bottom: none;
+        }
+
+        section table a {
+            padding-left: 18px;
+            font-size: 14px;
+            color: rgb(109, 109, 109);
+            text-decoration: none;
+            background-repeat: no-repeat;
+            background-position: left center;
+            background-size: 14px 14px;
+        }
+
+#total {
+}
+
+    #total p:first-child {
+        font-size: 26px;
+        color: rgb(252, 60, 60);
+    }
+
+    #total p:last-child {
+        font-size: 14px;
+        color: rgb(175, 217, 252);
+    }
+
+#gift,
+#install,
+#sort,
+#upgrade {
+    text-decoration: none;
+}
+
+
+#gift {
+    position: relative;
+    background-image: url("../Images/index/gift.png");
+}
+
+    #gift:after {
+        content: "";
+        position: absolute;
+        top: -10px;
+        right: -12px;
+        display: block;
+        width: 10px;
+        height: 13.5px;
+        background: url("../Images/index/hot.png") no-repeat center center;
+        background-size: 10px 13.5px;
+    }
+
+#install {
+    background-image: url("../Images/index/install.png");
+}
+
+#sort {
+    background-image: url("../Images/index/sort.png");
+}
+
+#upgrade {
+    background-image: url("../Images/index/upgrade.png");
+}
+
+article {
+    border-top: 10px solid rgb(242,242,242);
+}
+
+.tabs {
+    display: block;
+    font-size: 0;
+    outline: 1px solid #9ad6fc;
+}
+
+    .tabs a {
+        display: inline-block;
+        padding: 6px 0;
+        width: 33.33%;
+        font-size: 14px;
+        color: rgb(109,109,109);
+        text-align: center;
+        text-decoration: none;
+        border-right: 1px solid #9ad6fc;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+        .tabs a:last-child {
+            border-right: none;
+        }
+
+        .tabs a.active {
+            color: #35adf9;
+        }
+
+.panel .panel-item {
+    display: none;
+    padding: 10px 0;
+    min-height: 160px;
+}
+
+#unActivatedList {
+    display: block;
+}
+
+    #unActivatedList ul li {
+        padding: 10px 0;
+    }
+
+        #unActivatedList ul li a {
+            position: relative;
+            display: block;
+            margin: auto;
+            width: 254.5px;
+            height: 91.5px;
+            text-align: center;
+            background: url("../Images/index/bg_redpackets.png") no-repeat center center;
+            background-size: 100% 100%;
+        }
+
+            #unActivatedList ul li a time,
+            #unActivatedList ul li a mark,
+            #unActivatedList ul li a span {
+                display: inline-block;
+            }
+
+            #unActivatedList ul li a time,
+            #unActivatedList ul li a span {
+                position: absolute;
+            }
+
+            #unActivatedList ul li a time {
+                top: 14px;
+                left: 16px;
+                font-size: 12px;
+                color: #666;
+                background-color: transparent;
+            }
+
+            #unActivatedList ul li a mark {
+                display: inline-block;
+                font-size: 20px;
+                line-height: 91.5px;
+                color: #35adf9;
+                background-color: transparent;
+            }
+
+            #unActivatedList ul li a span {
+                top: 33.25px;
+                right: 20px;
+                padding: 0 12px;
+                height: 25px;
+                font-size: 14px;
+                line-height: 25px;
+                color: rgb(230,0,18);
+                background-color: #fad31e;
+                border-radius: 12.5px;
+            }
+
+.htable {
+    width: 100%;
+}
+
+    .htable th {
+        font-weight: normal;
+    }
+
+    .htable th,
+    .htable td {
+        padding: 10px 0;
+        color: #777;
+        text-align: center;
+    }
+
+    .htable tbody tr td:nth-child(2) {
+        color: #333;
+    }
+
+    .htable tbody tr td:last-child {
+        color: red;
+    }
+
+    .htable tbody tr {
+        border-top: 1px solid #eee;
+    }
+
+/*首页的弹出框样式*/
+.calert .calert-dialog {
+    margin: 120px auto;
+    width: 80%;
+}
+
+    .calert .calert-dialog .calert-content .calert-body {
+        position: relative;
+        padding: 60px 30px 0;
+    }
+
+        .calert .calert-dialog .calert-content .calert-body .calert-msg {
+            position: absolute;
+            top: -60px;
+            right: 0;
+            left: 0;
+            height: 101.5px;
+            font-size: 25px;
+            line-height: 130px;
+            color: white;
+            background: url("../Images/index/success.png") no-repeat center center;
+            background-size: 251.5px 100%;
+        }
+
+        .calert .calert-dialog .calert-content .calert-body .calert-help {
+            font-size: 14px;
+            line-height: 1.5;
+            text-align: justify;
+            color: rgb(127,127,127);
+            letter-spacing: 2px;
+        }
+
+    .calert .calert-dialog .calert-content .calert-footer {
+        padding: 25px 0;
+        border-radius: 10px;
+    }
+
+        .calert .calert-dialog .calert-content .calert-footer .calert-close {
+            border-radius: 20px;
+        }

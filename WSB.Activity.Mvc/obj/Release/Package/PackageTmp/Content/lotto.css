@@ -1,0 +1,257 @@
+﻿body {
+    background: rgb(62,180,249) url("../Images/lotto/bg_lotto.png") no-repeat;
+    background-size: 100% auto;
+}
+
+/*抽奖转盘样式*/
+.turntable {
+    position: relative;
+    z-index: 10;
+    margin: 15px auto;
+    width: 285.5px;
+    height: 297px;
+    background: url("../Images/lotto/turntable.png") no-repeat center center;
+    background-size: 100% 100%;
+}
+
+    .turntable .turntable-awards {
+        position: absolute;
+        top: 16px;
+        right: 15px;
+        bottom: 28px;
+        left: 15px;
+        background: url("../Images/lotto/turntable_awards.png") no-repeat center center;
+        background-size: 100% 100%;
+    }
+
+    .turntable .turntable-pointer {
+        position: absolute;
+        top: 70px;
+        right: 88px;
+        bottom: 100px;
+        left: 88px;
+        background: url("../Images/lotto/turntable_pointer.png") no-repeat center center;
+        background-size: 100% 100%;
+        cursor: pointer;
+    }
+
+        .turntable .turntable-pointer p {
+            font-size: 20px;
+            line-height: 1.2;
+            font-weight: bold;
+            color: white;
+            text-align: center;
+            letter-spacing: 1px;
+        }
+
+            .turntable .turntable-pointer p:first-child {
+                margin-top: 48px;
+            }
+
+            .turntable .turntable-pointer p:last-child {
+            }
+
+/*抽奖结果样式*/
+.ellipse {
+    position: relative;
+    z-index: 9;
+    margin-top: -45px;
+    width: 100%;
+    height: 150px;
+    background: url("../Images/lotto/ellipse.png") no-repeat center center;
+    background-size: 100% 100%;
+}
+
+    .ellipse:before {
+        position: absolute;
+        top: 10px;
+        left: 5px;
+        display: block;
+        width: 105px;
+        height: 100px;
+        content: "";
+        background: url("../Images/send/people.png") no-repeat center center;
+        background-size: 100% 100%;
+    }
+
+    .ellipse p {
+        margin-left: 125px;
+        line-height: 1.6;
+        color: white;
+        text-align: center;
+        letter-spacing: 1px;
+    }
+
+.coupon-number {
+    padding-top: 50px;
+    font-size: 18px;
+}
+
+    .coupon-number mark {
+        color: white;
+    }
+
+.coupon-prompt {
+    font-size: 16px;
+}
+
+    .coupon-prompt a {
+        color: rgb(251,254,3);
+        text-decoration: underline;
+    }
+
+/*按钮栏样式*/
+.buttonbar {
+    margin: 15px 0;
+    text-align: center;
+}
+
+    .buttonbar button {
+        padding: 5px 20px 5px 35px;
+        font-size: 14px;
+        color: white;
+        background-color: rgb(28,126,216);
+        border: none;
+        outline: none;
+        border-radius: 15px;
+    }
+
+        .buttonbar button:first-child {
+            margin-right: 15px;
+            background: rgb(28,126,216) url("../Images/lotto/help.png") no-repeat 16px center;
+            background-size: 15px 15px;
+        }
+
+        .buttonbar button:last-child {
+            background: rgb(28,126,216) url("../Images/lotto/gift.png") no-repeat 16px center;
+            background-size: 15px 15px;
+        }
+
+/*中奖记录样式*/
+.records {
+    position: relative;
+    margin: 15px auto;
+    padding: 30px 10px 15px;
+    width: 95%;
+    height: 380px;
+    background: transparent url("../Images/lotto/bg_records.png") no-repeat center center;
+    background-size: 100% 100%;
+}
+
+    .records .records-banner {
+        margin: 15px auto;
+        width: 183px;
+        height: 30px;
+        font-size: 18px;
+        line-height: 30px;
+        color: white;
+        text-align: center;
+        background: transparent url("../Images/lotto/records_banner.png") no-repeat center center;
+        background-size: 100% 100%;
+    }
+
+    .records .records-list {
+        margin: auto;
+        width: 90%;
+        max-height: 230px;
+        overflow: hidden;
+    }
+
+        .records .records-list tr:nth-child(2n+1) {
+            background-color: rgb(250,196,151);
+        }
+
+        .records .records-list tr td {
+            text-align: center;
+        }
+
+            .records .records-list tr td:nth-child(1) {
+                color: rgb(147,147,147);
+            }
+
+            .records .records-list tr td:nth-child(2) {
+                color: rgb(100,100,100);
+            }
+
+            .records .records-list tr td:nth-child(3) a.unreceived {
+                color: rgb(62,180,249);
+                text-decoration: underline;
+            }
+
+            .records .records-list tr td:nth-child(3) a.received {
+                color: rgb(147,147,147);
+                text-decoration: none;
+            }
+
+    .records .records-more {
+        position: absolute;
+        right: 0;
+        bottom: 25px;
+        left: 0;
+        text-align: center;
+    }
+
+        .records .records-more a {
+            font-size: 14px;
+            color: rgb(246,73,58);
+            text-decoration: underline;
+        }
+
+/*弹出框样式*/
+.calert .calert-dialog {
+    margin: 50px auto 0;
+    width: 100%;
+}
+
+    .calert .calert-dialog .calert-content {
+        margin: auto;
+        width: 300px;
+        height: 300px;
+        background: url("../Images/lotto/bg_tv.png") no-repeat center center;
+        background-size: 100% 100%;
+        background-color: transparent;
+        box-shadow: none;
+    }
+
+        .calert .calert-dialog .calert-content .calert-body .calert-prompt,
+        .calert .calert-dialog .calert-content .calert-body .calert-msg,
+        .calert .calert-dialog .calert-content .calert-footer .calert-close {
+            margin-right: 20px;
+            text-align: center;
+        }
+
+        .calert .calert-dialog .calert-content .calert-body {
+            padding: 100px 0 0;
+        }
+
+            .calert .calert-dialog .calert-content .calert-body .calert-prompt {
+                font-size: 24px;
+                color: rgb(112,60,35);
+            }
+
+            .calert .calert-dialog .calert-content .calert-body .calert-msg {
+                margin-top: 2px;
+                margin-bottom: 6px;
+                font-size: 14px;
+                color: rgb(118,69,47);
+            }
+
+                .calert .calert-dialog .calert-content .calert-body .calert-msg span {
+                    font-size: 16px;
+                    color: rgb(238,106,43);
+                }
+
+        .calert .calert-dialog .calert-content .calert-footer {
+            margin: 0;
+            padding: 0;
+        }
+
+            .calert .calert-dialog .calert-content .calert-footer .calert-close {
+                padding: 0 10px;
+                width: auto;
+                height: 20px;
+                font-size: 14px;
+                line-height: 20px;
+                background-color: rgb(168,66,0);
+                border-radius: 5px;
+            }

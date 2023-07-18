@@ -1,0 +1,8 @@
+D:\2017\WSB.Activity\WSB.Activity.Test\bin\Debug\WSB.Activity.Test.exe.config
+D:\2017\WSB.Activity\WSB.Activity.Test\bin\Debug\WSB.Activity.Test.exe
+D:\2017\WSB.Activity\WSB.Activity.Test\bin\Debug\WSB.Activity.Test.pdb
+D:\2017\WSB.Activity\WSB.Activity.Test\obj\Debug\WSB.Activity.Test.exe
+D:\2017\WSB.Activity\WSB.Activity.Test\obj\Debug\WSB.Activity.Test.pdb
+D:\2017\WSB.Activity\WSB.Activity.Test\obj\Debug\WSB.Activity.Test.csprojResolveAssemblyReference.cache
+D:\2017\WSB.Activity\WSB.Activity.Test\bin\Debug\Newtonsoft.Json.dll
+D:\2017\WSB.Activity\WSB.Activity.Test\bin\Debug\Newtonsoft.Json.xml

@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <!--log4net节点声明-->
+  <configSections>
+    <section name="log4net" type="System.Configuration.IgnoreSectionHandler"/>
+  </configSections>
+  <appSettings>
+  </appSettings>
+  <log4net>
+    <!--定义输出至文件-->
+    <appender name="LogFileAppender" type="log4net.Appender.FileAppender">
+      <!--定义日志文件存储路径-->
+      <file value="C:/log4net.log.txt" />
+      <appendToFile value="true" />
+      <rollingStyle value="Date" />
+      <datePattern value="yyyyMMdd-HH:mm:ss" />
+      <layout type="log4net.Layout.PatternLayout">
+        <!--输出格式-->
+        <conversionPattern value="时间：[%date]\t线程id：[%thread]\t级别：[%level]%newline位置：[%logger]\t描述：[%message]%newline" />
+      </layout>
+    </appender>
+    <!--定义输出至控制台命令行-->
+    <appender name="ConsoleAppender" type="log4net.Appender.ConsoleAppender">
+      <layout type="log4net.Layout.PatternLayout">
+        <conversionPattern value="时间：[%date]\t线程id：[%thread]\t级别：[%level]%newline位置：[%logger]\t描述：[%message]%newline" />
+      </layout>
+    </appender>
+    <!--定义输出至windows事件-->
+    <appender name="EventLogAppender" type="log4net.Appender.EventLogAppender">
+      <layout type="log4net.Layout.PatternLayout">
+        <conversionPattern value="时间：[%date]\t线程id：[%thread]\t级别：[%level]%newline位置：[%logger]\t描述：[%message]%newline" />
+      </layout>
+    </appender>
+    <!--定义输出至数据库，示例：输出至Access数据库-->
+    <appender name="AdoNetAppender_Access" type="log4net.Appender.AdoNetAppender">
+      <!--定义参数-->
+      <parameter>
+        <parameterName value="@logDate" />
+        <dbType value="String" />
+        <size value="240" />
+        <layout type="log4net.Layout.PatternLayout">
+          <conversionPattern value="%date" />
+        </layout>
+      </parameter>
+      <parameter>
+        <parameterName value="@thread" />
+        <dbType value="String" />
+        <size value="240" />
+        <layout type="log4net.Layout.PatternLayout">
+          <conversionPattern value="%thread" />
+        </layout>
+      </parameter>
+      <parameter>
+        <parameterName value="@logLevel" />
+        <dbType value="String" />
+        <size value="240" />
+        <layout type="log4net.Layout.PatternLayout">
+          <conversionPattern value="%level" />
+        </layout>
+      </parameter>
+      <parameter>
+        <parameterName value="@logger" />
+        <dbType value="String" />
+        <size value="240" />
+        <layout type="log4net.Layout.PatternLayout">
+          <conversionPattern value="%logger" />
+        </layout>
+      </parameter>
+      <parameter>
+        <parameterName value="@message" />
+        <dbType value="String" />
+        <size value="240" />
+        <layout type="log4net.Layout.PatternLayout">
+          <conversionPattern value="%message" />
+        </layout>
+      </parameter>
+    </appender>
+    <!--定义日志输出介质，示例：四种方式输出-->
+    <root>
+      <!--文件形式-->
+      <appender-ref ref="LogFileAppender" />
+      <!--控制台形式-->
+      <!--<appender-ref ref="ConsoleAppender" />-->
+      <!--Windows事件形式-->
+      <!--<appender-ref ref="EventLogAppender" />-->
+    </root>
+  </log4net>
+</configuration>

@@ -1,0 +1,62 @@
+﻿@model WSB.Activity.Mvc.Models.RedpacketsReceiveViewModel
+@{
+    ViewBag.Title = "抢到红包啦";
+}
+
+@section styles{
+    <link href="~/Content/receive.css" rel="stylesheet" />
+}
+
+@{int number = Model.UserRedpacketsMap != null ? Model.UserRedpacketsMap.Number : 0;}
+<p class="number">获得<span>@number</span>天宽带！</p>
+
+<div class="whole">
+    <div class="bag bag-open"></div>
+    <a class="cbutton" href="~/User/Index">去领取</a>
+
+    <section class="rsection">
+        <table class="rtable">
+            <caption>
+                <i></i>
+                <span>看看朋友手气如何！</span>
+                <i></i>
+            </caption>
+            @foreach (var item in Model.ReceiveList)
+            {
+                <tr>
+                    <td><img src="@item.Avatar" alt="@item.Nickname" /></td>
+                    <td>@item.Nickname</td>
+                    <td>@item.ReceiveTime.ToString("MM-dd hh:mm")</td>
+                    <td>@(item.Number)天</td>
+                </tr>
+            }
+        </table>
+    </section>
+</div>
+
+<a class="introduce" data-toggle="modal" href="#introduceModal"></a>
+
+<footer class="footer">
+    <p>至<a>合肥有线</a>微信公众号领取宽带红包</p>
+</footer>
+
+@Html.Partial("_IntroducePartial")
+
+@section scripts{
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script src="~/Scripts/jwx.js"></script>
+    <script>
+        function init() {
+            var $caption = $(".rtable caption"),
+                    width = $caption.width() - $caption.find("span").outerWidth();
+            $caption.find("i").width(width / 2);
+        }
+
+        $(function () {
+            var url = '@Url.Content("~/User/GetJsConfigData")',
+                link = window.location.origin + '@Url.Content("~/Redpackets/Detail/")' + '@Model.RedpacketsId';
+            new WeChat().init(url, link);
+            init();
+        });
+    </script>
+}

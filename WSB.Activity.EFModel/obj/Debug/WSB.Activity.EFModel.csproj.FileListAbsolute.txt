@@ -1,0 +1,12 @@
+D:\2017\WSB.Activity\WSB.Activity.EFModel\bin\Debug\WSB.Activity.EFModel.dll.config
+D:\2017\WSB.Activity\WSB.Activity.EFModel\bin\Debug\WSB.Activity.EFModel.dll
+D:\2017\WSB.Activity\WSB.Activity.EFModel\bin\Debug\WSB.Activity.EFModel.pdb
+D:\2017\WSB.Activity\WSB.Activity.EFModel\bin\Debug\EntityFramework.dll
+D:\2017\WSB.Activity\WSB.Activity.EFModel\bin\Debug\EntityFramework.SqlServer.dll
+D:\2017\WSB.Activity\WSB.Activity.EFModel\bin\Debug\EntityFramework.xml
+D:\2017\WSB.Activity\WSB.Activity.EFModel\bin\Debug\EntityFramework.SqlServer.xml
+D:\2017\WSB.Activity\WSB.Activity.EFModel\bin\Debug\zh-Hans\EntityFramework.resources.dll
+D:\2017\WSB.Activity\WSB.Activity.EFModel\bin\Debug\zh-Hans\EntityFramework.SqlServer.resources.dll
+D:\2017\WSB.Activity\WSB.Activity.EFModel\obj\Debug\WSB.Activity.EFModel.dll
+D:\2017\WSB.Activity\WSB.Activity.EFModel\obj\Debug\WSB.Activity.EFModel.pdb
+D:\2017\WSB.Activity\WSB.Activity.EFModel\obj\Debug\WSB.Activity.EFModel.csprojResolveAssemblyReference.cache

@@ -1,0 +1,141 @@
+﻿@model WSB.Activity.Mvc.Models.LottoIndexViewModel
+@{
+    ViewBag.Title = "节目礼包幸运抽";
+}
+
+@section styles{
+    <link href="~/Content/lotto.css" rel="stylesheet" />
+}
+
+<header class="title">
+    <p class="title-ckyx"></p>
+    <p class="title-shwzds"></p>
+</header>
+
+<p class="banner banner-lotto">
+    您还有<mark class="banner-count">@Model.ChanceCount</mark>次抽奖机会
+    <a class="banner-more" href="~/Redpackets/Task">获取抽奖机会<span>＞</span></a>
+</p>
+
+<section class="turntable">
+    <div class="turntable-awards"></div>
+    <div class="turntable-pointer">
+        <p>立即</p>
+        <p>抽奖</p>
+    </div>
+</section>
+
+<section class="ellipse">
+    <p class="coupon-number">你已获得<mark>@Model.TotalNumber</mark>元礼券</p>
+    <p class="coupon-prompt">可前往<a href="#">微厅</a>兑换付费节目</p>
+</section>
+
+<p class="buttonbar">
+    <button>抽奖规则</button>
+    <button>我的活动</button>
+</p>
+
+<section class="records">
+    <p class="records-banner">获取记录</p>
+    <table class="records-list">
+        @foreach (var item in Model.LottoList)
+        {
+            <tr>
+                <td>@item.LottoTime.ToString("MM-dd HH:mm")</td>
+                <td>@(item.Number)礼券</td>
+                @if (item.Status)
+                {
+                    <td><a class="received">已领取</a></td>
+                }
+                else
+                {
+                    <td><a class="unreceived" href="~/Lotto/Activate/@(item.Id)">去领取</a></td>
+                }
+            </tr>
+        }
+    </table>
+    <p class="records-more"><a href="#">查看更多中奖记录</a></p>
+</section>
+
+<section class="calert">
+    <div class="calert-dialog">
+        <div class="calert-content">
+            <section class="calert-body">
+                <p class="calert-prompt"></p>
+                <p class="calert-msg"></p>
+            </section>
+            <footer class="calert-footer">
+                <button class="calert-close"></button>
+            </footer>
+        </div>
+    </div>
+</section>
+
+@section scripts{
+    <script src="~/Scripts/alert.js"></script>
+    <script src="~/Scripts/rotate.js"></script>
+    <script>
+        var isStart = false;
+
+        function done() {
+            $(".turntable-pointer").click(function () {
+                if (isStart) {
+                    return;
+                }
+                $.ajax({
+                    url: '@Url.Action("Done", "Lotto")',
+                    type: "GET",
+                    cache: false,
+                    dataType: "json",
+                    success: function (result, status, xhr) {
+                        var status = result.status;
+                        if (status) {
+                            isStart = !isStart;
+                            var AWARDS_CONFIG = {
+                                0: { angle: 0, amount: 0, text: "继续加油" },
+                                1: { angle: 240, amount: 1, text: "1元节目礼券" },
+                                5: { angle: 120, amount: 5, text: "5元节目礼券" },
+                                10: { angle: 180, amount: 10, text: "10元节目礼券" },
+                                20: { angle: 300, amount: 20, text: "20元节目礼券" },
+                                50: { angle: 60, amount: 50, text: "50元节目礼券" },
+                            },
+                                item = AWARDS_CONFIG[result.data],
+                                $awards = $(".turntable-awards");
+                            $awards.stopRotate();
+                            $awards.rotate({
+                                angle: 0,
+                                animateTo: item["angle"] + 1800,
+                                duration: 8000,
+                                callback: function () {
+                                    isStart = !isStart;
+                                    var data = null;
+                                    if (result.data == 0) {
+                                        data = {
+                                            prompt: "很遗憾!",
+                                            msg: "继续加油，再接再厉!",
+                                            close: "再来一次"
+                                        };
+                                    } else {
+                                        data = {
+                                            prompt: "恭喜啦!",
+                                            msg: "抽中<span>" + result.data + "</span>元礼券",
+                                            close: "再来一次"
+                                        };
+                                    }
+                                    new Alert(true).open(data);
+                                }
+                            });
+                        } else {
+                            alert(JSON.stringify(result.msg, null, 2));
+                        }
+                    }
+                });
+            });
+        }
+
+        $(function () {
+            done();
+        });
+    </script>
+}
+

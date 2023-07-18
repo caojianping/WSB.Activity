@@ -1,0 +1,26 @@
+﻿body {
+    background: rgb(253, 162, 11) url("../Images/bg_open.png") no-repeat;
+    background-size: 100% auto;
+}
+
+
+.number {
+    display: block;
+    margin: auto;
+    margin-top: 30px;
+    width: 68%;
+    height: 68px;
+    font-size: 20px;
+    line-height: 68px;
+    color: #f41432;
+    text-align: center;
+    background-image: url("../Images/number.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+    .number span {
+        margin: 0 3px;
+        font-size: 22px;
+        color: rgb(255, 0,0 );
+    }
